@@ -1,0 +1,32 @@
+.categories .row {
+  margin: 10px 0; }
+  .categories .row .item {
+    background: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100px;
+    max-height: 100px;
+    overflow: auto;
+    margin: 0 10px 10px 0;
+    transition: all .3s; }
+    .categories .row .item .edit {
+      display: none;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: #5e99d8;
+      cursor: pointer; }
+    .categories .row .item .edit:hover {
+      color: #416183; }
+    .categories .row .item h4 {
+      margin: 0 0 5px 0; }
+    .categories .row .item p {
+      width: 100%; }
+  .categories .row .item:hover {
+    box-shadow: 0 0 10px 5px #CCC;
+    cursor: pointer;
+    transform: scale(1.05);
+    z-index: 2; }
+    .categories .row .item:hover .edit {
+      display: block; }

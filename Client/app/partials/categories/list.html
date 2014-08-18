@@ -1,0 +1,15 @@
+<div class="categories">
+	<button class="btn btn-primary" data-ng-click="openDialog()">
+		<span class="glyphicon glyphicon-plus"></span>
+		Category
+	</button>
+	<div class="row">
+		<div class="col-md-3 item" data-ng-repeat="category in filters = (categories | filter:{title: search})">
+			<span class="edit glyphicon glyphicon-pencil" ng-click="openDialog(category)"></span>
+			<h4>{{category.title}}</h4>
+			<p>{{category.description}}</p>
+		</div>
+		<h4 data-ng-show="filters.length == 0">No Results where found</h4>
+	</div>
+
+</div>

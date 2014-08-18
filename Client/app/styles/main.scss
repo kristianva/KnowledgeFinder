@@ -1,0 +1,18 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+
+@import './categories';
+@import './users';
+
+.container .navbar-form.navbar-right {
+	margin-right: 0;
+}
+
+.modal-content {
+	form {
+		padding: 10px;
+	}
+}
+
+

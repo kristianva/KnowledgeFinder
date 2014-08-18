@@ -1,0 +1,19 @@
+<div class="modal-content">
+	<form>
+		<h3>{{actionName}} category</h3>
+		<div class="form-group text-left">
+			<label for="categoryTitle" class="control-label">Title</label>
+			<input type="text" class="form-control" id="categoryTitle" data-ng-model="category.title"
+			       placeholder="Category title">
+		</div>
+		<div class="form-group">
+			<label for="categoryDescription" class="control-label">Description</label>
+			<textarea type="text" class="form-control" id="categoryDescription" data-ng-model="category.description"
+			          placeholder="Write a brief description"></textarea>
+		</div>
+		<div class="form-group text-right">
+			<button type="submit" class="btn btn-default" data-ng-click="cancel()">Cancel</button>
+			<button type="submit" class="btn btn-primary" data-ng-click="save()">Save</button>
+		</div>
+	</form>
+</div>

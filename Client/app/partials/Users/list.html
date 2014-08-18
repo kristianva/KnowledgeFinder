@@ -1,0 +1,12 @@
+<div class="users">
+	<div class="list-group">
+		<a ui-sref="users.user({id: user.id})"  class="list-group-item" data-ng-repeat="user in filters = (users | orderBy:['firstName', 'lastName', '-numberCategories'] | filter:search)">
+			<img src="{{user.photo}}">
+			<span>
+				{{user.firstName + ' ' + user.lastName}} ({{user.username}})
+				<span class="badge">{{user.numberCategories}}</span>
+			</span>
+		</a>
+	</div>
+	<div ui-view=""></div>
+</div>
