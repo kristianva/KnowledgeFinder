@@ -15,20 +15,35 @@
 	<script src="bower_components/modernizr/modernizr.js"></script>
 	<!-- endbuild -->
 </head>
-<body class="container">
+<body class="container" data-ng-controller="MainCtrl">
 <nav class="navbar navbar-static-top navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="#">{{appName}}</a>
+		<a class="navbar-brand" ui-sref="home">{{appName}}</a>
 	</div>
 
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
 		<ul class="nav navbar-nav">
-			<li ng-class="{active:$state.includes('home')}"><a href="#">Home</a></li>
-			<li ng-class="{active:$state.includes('categories')}"><a ui-sref="categories">Categories</a></li>
-			<li ng-class="{active:$state.includes('users')}"><a ui-sref="users">Users</a></li>
+			<li data-ng-if="isAuthenticated()" data-ng-class="{active:$state.includes('categories')}">
+				<a ui-sref="categories">Categories</a>
+			</li>
+			<li data-ng-if="isAuthenticated()" data-ng-class="{active:$state.includes('users')}">
+				<a ui-sref="users">Users</a>
+			</li>
 		</ul>
-		<div class="navbar-form navbar-right" >
-			<input data-ng-model="search" type="text" class="form-control" placeholder="Search">
+
+		<ul class="nav navbar-nav navbar-right">
+			<li data-ng-if="!isAuthenticated()">
+				<a ui-sref="auth.register" class="pull-right">Register</a>
+				<a ui-sref="auth.login" class="pull-right">Login</a>
+			</li>
+			<li>
+				<input data-ng-if="isAuthenticated()" data-ng-model="search" type="text" class="form-control pull-left"
+				       placeholder="Search">
+			</li>
+		</ul>
+		<div class="navbar-form navbar-right">
+
+			<div data-ng-if="currentUser"></div>
 		</div>
 	</div>
 </nav>
@@ -55,7 +70,12 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/Controllers/mainCtrl.js"></script>
 <script src="scripts/Controllers/categoryCtrl.js"></script>
-<script src="scripts/Controllers/userCtrl.js"></script>
+<script src="scripts/Controllers/Auth/loginCtrl.js"></script>
+<script src="scripts/Controllers/Users/userListCtrl.js"></script>
+<script src="scripts/Controllers/Users/userCtrl.js"></script>
+
+<script src="scripts/Services/SessionService.js"></script>
+<script src="scripts/Services/AuthService.js"></script>
 <script src="scripts/Services/CategoryService.js"></script>
 <script src="scripts/Services/UserService.js"></script>
 <!-- inject:partials -->

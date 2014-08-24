@@ -15,4 +15,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 	}
 }
 
-
+.jumbotron {
+	p {
+		margin-bottom: 15px;
+		font-size: 1em;
+		font-weight: 200;
+	}
+	.thumbnail {
+		height: 150px;
+	}
+}

@@ -1,5 +1,5 @@
-<div class="users">
-	<div class="list-group">
+<div class="users row">
+	<div class="list-group col-sm-4">
 		<a ui-sref="users.user({id: user.id})"  class="list-group-item" data-ng-repeat="user in filters = (users | orderBy:['firstName', 'lastName', '-numberCategories'] | filter:search)">
 			<img src="{{user.photo}}">
 			<span>
@@ -8,5 +8,5 @@
 			</span>
 		</a>
 	</div>
-	<div ui-view=""></div>
+	<div ui-view="" class="col-sm-8"></div>
 </div>
