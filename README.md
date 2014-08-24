@@ -5,18 +5,18 @@ In large companies we rarely know the name of all the coworkers and probably we 
 
 #Technologies
 We developed the app using a JS Full stack using these technologies
-[ ] AngularJS
-[ ] Bootstrap 3
-[ ] NodeJS
-[ ] Express
-[ ] MongoDB
-[ ] SASS
+* AngularJS
+* Bootstrap 3
+* NodeJS
+* Express
+* MongoDB
+* SASS
 
 #Enviroment setup
 
 ## Install
 
-You need the installation of Compass for SASS and the next modules
+You need the installation of **Compass for SASS** and the next modules
 
 ```sh
 $ npm install -g gulp
