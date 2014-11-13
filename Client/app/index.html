@@ -31,18 +31,16 @@
 			</li>
 		</ul>
 
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="row nav navbar-nav navbar-right">
 			<li data-ng-if="!isAuthenticated()">
 				<a ui-sref="auth.register" class="pull-right">Register</a>
 				<a ui-sref="auth.login" class="pull-right">Login</a>
 			</li>
-			<li>
-				<input data-ng-if="isAuthenticated()" data-ng-model="search" type="text" class="form-control pull-left"
-				       placeholder="Search">
+			<li data-ng-if="isAuthenticated()">
+				<a data-ng-if="isAuthenticated()" data-ng-click="logout()" class="col-sm-4">Logout</a>
 			</li>
 		</ul>
 		<div class="navbar-form navbar-right">
-
 			<div data-ng-if="currentUser"></div>
 		</div>
 	</div>
@@ -70,7 +68,8 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/Controllers/mainCtrl.js"></script>
 <script src="scripts/Controllers/categoryCtrl.js"></script>
-<script src="scripts/Controllers/Auth/loginCtrl.js"></script>
+<script src="scripts/Controllers/Users/loginCtrl.js"></script>
+<script src="scripts/Controllers/Users/signupCtrl.js"></script>
 <script src="scripts/Controllers/Users/userListCtrl.js"></script>
 <script src="scripts/Controllers/Users/userCtrl.js"></script>
 

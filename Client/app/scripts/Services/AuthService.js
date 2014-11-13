@@ -5,18 +5,26 @@
 
 app.factory('AuthService', ['Restangular', 'SessionService', function(Restangular, SessionService) {
 	var httpLogin =  Restangular.all('login'),
-		authObj = {};
+		httpLogout =  Restangular.all('logout'),
+		resultObj = {};
 
-	authObj.login = function(credentials) {
+	resultObj.login = function(credentials) {
 		return httpLogin.post(credentials).then(function (res) {
 			SessionService.create(res.id, res.user.id, res.user.role);
 			return res.user;
 		});
 	};
 
-	authObj.isAuthenticated = function() {
+	resultObj.isAuthenticated = function() {
 		return !!SessionService.id;
 	};
 
-	return authObj;
+	resultObj.logout = function () {
+		return httpLogout.post(SessionService).then(function () {
+			SessionService.destroy();
+			return null;
+		});
+	};
+
+	return resultObj;
 }]);

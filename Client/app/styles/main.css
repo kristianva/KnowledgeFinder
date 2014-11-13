@@ -5246,4 +5246,6 @@ button.close {
   font-size: 1em;
   font-weight: 200; }
 .jumbotron .thumbnail {
-  height: 150px; }
+  height: 250px; }
+.jumbotron img {
+  width: 100%; }
